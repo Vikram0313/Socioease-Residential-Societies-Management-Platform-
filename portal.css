@@ -1,0 +1,157 @@
+/* ==============================================
+   PORTAL.CSS — Socioease v5 — Navy + Cyan Theme
+   ============================================== */
+
+/* 1. RESET & BASE */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+html { overflow-y: scroll; }
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', 'Segoe UI', Tahoma, sans-serif; }
+body { background: #EFF6FF; min-height: 100vh; }
+
+/* 2. HEADER */
+header {
+    position: fixed; top: 0; left: 0; width: 100%; height: 68px;
+    background: #0D2137;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0 30px; z-index: 1000;
+    box-shadow: 0 2px 16px rgba(13,33,55,0.25);
+}
+.header-left { display: flex; align-items: center; gap: 20px; }
+.header-left h2 { color: #0EA5C9; font-weight: 800; font-size: 22px; letter-spacing: -0.5px; }
+.header-left h2 span { color: white; }
+#menu-toggle { color: rgba(255,255,255,0.7); font-size: 20px; cursor: pointer; transition: 0.2s; }
+#menu-toggle:hover { color: #0EA5C9; }
+.logout-btn {
+    background: #0EA5C9; color: white; text-decoration: none;
+    padding: 8px 18px; border-radius: 8px; font-weight: 700; font-size: 13px;
+    transition: 0.2s; letter-spacing: 0.2px;
+}
+.logout-btn:hover { background: #0284A8; }
+
+/* 3. SIDEBAR */
+.sidebar {
+    width: 255px; background: #0D2137;
+    position: fixed; top: 68px; left: 0;
+    height: calc(100vh - 68px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: 0.3s ease-in-out; z-index: 999;
+    border-right: 1px solid rgba(255,255,255,0.05);
+    scrollbar-width: thin;
+    scrollbar-color: rgba(14,165,201,0.3) transparent;
+}
+.sidebar.collapsed { left: -255px; }
+.user-panel {
+    padding: 28px 20px; text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    background: rgba(14,165,201,0.05);
+}
+.user-panel img {
+    width: 80px; height: 80px; border-radius: 50%;
+    border: 3px solid #0EA5C9; background: white; margin-bottom: 10px;
+}
+.user-panel h4 { color: white; font-weight: 600; font-size: 15px; }
+.nav-links a {
+    display: flex; align-items: center; padding: 13px 22px;
+    color: rgba(255,255,255,0.55); text-decoration: none;
+    transition: 0.2s; font-size: 13.5px; font-weight: 500;
+    border-left: 3px solid transparent;
+}
+.nav-links a:hover { background: rgba(14,165,201,0.08); color: white; border-left-color: rgba(14,165,201,0.5); }
+.nav-links a.active { background: rgba(14,165,201,0.12); color: white; border-left-color: #0EA5C9; font-weight: 700; }
+.nav-links a i { margin-right: 13px; width: 18px; text-align: center; font-size: 13px; }
+
+/* 4. MAIN CONTAINER */
+.main-container {
+    margin-left: 255px; width: calc(100% - 255px);
+    padding: 100px 35px 40px; transition: 0.3s ease-in-out;
+}
+.main-container.expanded { margin-left: 0; width: 100%; }
+
+/* 5. PAGE TITLE */
+.page-title { text-align: center; color: #0D2137; font-size: 26px; font-weight: 800; margin-bottom: 25px; letter-spacing: -0.5px; }
+
+/* 6. CARD BOX */
+.card-box {
+    background: white; border-radius: 14px;
+    box-shadow: 0 2px 16px rgba(13,33,55,0.07);
+    margin-bottom: 25px;
+    border: 1px solid #E2EAF4;
+}
+
+/* 7. TABLE */
+.table-container {
+    background: white; padding: 20px; border-radius: 14px;
+    box-shadow: 0 2px 16px rgba(13,33,55,0.07); overflow-x: auto;
+    border: 1px solid #E2EAF4;
+}
+.content-table { width: 100%; border-collapse: collapse; }
+.content-table thead tr { background: #0D2137; color: white; }
+.content-table th { padding: 13px 16px; text-align: center; font-size: 13px; font-weight: 600; letter-spacing: 0.3px; }
+.content-table td { padding: 13px 16px; text-align: center; border-bottom: 1px solid #F1F5F9; font-size: 14px; color: #0F172A; }
+.content-table tbody tr:nth-child(even) { background: #F8FAFF; }
+.content-table tbody tr:hover { background: #EFF6FF; transition: 0.15s; }
+
+/* 8. FORM FIELDS */
+.field {
+    width: 100%; padding: 11px 14px; margin-bottom: 14px;
+    border: 1.5px solid #E2EAF4; border-radius: 9px; font-size: 14px;
+    background: #F8FAFC; outline: none; transition: 0.2s;
+    font-family: inherit; color: #0F172A;
+}
+.field:focus { border-color: #0EA5C9; background: white; box-shadow: 0 0 0 3px rgba(14,165,201,0.10); }
+textarea.field { resize: vertical; }
+
+/* 9. BUTTONS */
+.btn {
+    padding: 11px 22px; background: #0EA5C9; color: white;
+    border: none; border-radius: 9px; font-weight: 700;
+    cursor: pointer; transition: 0.2s; font-size: 14px;
+    text-decoration: none; display: inline-block; text-align: center;
+    font-family: inherit;
+}
+.btn:hover { background: #0284A8; transform: translateY(-1px); }
+.btn-full { width: 100%; display: block; }
+.btn-danger { background: #DC2626; }
+.btn-danger:hover { background: #B91C1C; }
+.Table_btn { padding: 7px 14px; background: #0EA5C9; border-radius: 7px; color: white; border: none; font-weight: 600; cursor: pointer; transition: 0.2s; font-size: 13px; }
+.Table_btn:hover { background: #0284A8; }
+.action-btn { padding: 6px 12px; font-weight: 700; border-radius: 6px; border: none; cursor: pointer; color: white; text-decoration: none; font-size: 12px; display: inline-block; margin: 2px; }
+.btn-edit { background: #0EA5C9; }
+.btn-del  { background: #DC2626; }
+
+/* 10. FLASH MESSAGES */
+.flash-success { background: #F0FDF4; color: #059669; padding: 13px 18px; border-radius: 9px; margin-bottom: 18px; text-align: center; font-weight: 600; border: 1px solid #BBF7D0; font-size: 14px; }
+.flash-error   { background: #FEF2F2; color: #DC2626; padding: 13px 18px; border-radius: 9px; margin-bottom: 18px; text-align: center; font-weight: 600; border: 1px solid #FECACA; font-size: 14px; }
+
+/* 11. BADGES */
+.badge { padding: 4px 11px; border-radius: 20px; font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 0.3px; }
+.badge-pending  { background: #FEF9C3; color: #854D0E; }
+.badge-success  { background: #DCFCE7; color: #166534; }
+.badge-danger   { background: #FEE2E2; color: #991B1B; }
+.badge-info     { background: #E0F2FE; color: #0369A1; }
+.badge-approved { background: #DCFCE7; color: #166534; }
+.badge-rejected { background: #FEE2E2; color: #991B1B; }
+
+/* 12. SEARCH / FILTER */
+.filter-box { display: flex; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.search-input { flex: 3; padding: 11px 16px; border: 1.5px solid #0EA5C9; border-radius: 9px; outline: none; font-size: 14px; font-family: inherit; }
+.filter-select { flex: 1; padding: 11px; border: 1.5px solid #0EA5C9; border-radius: 9px; outline: none; cursor: pointer; min-width: 140px; font-family: inherit; }
+
+/* 13. PAGINATION */
+.pagination { display: flex; gap: 6px; justify-content: center; margin-top: 20px; }
+.pagination a, .pagination span {
+    padding: 7px 13px; border-radius: 7px; text-decoration: none;
+    font-weight: 600; font-size: 13px; border: 1.5px solid #E2EAF4;
+}
+.pagination a { background: white; color: #0D2137; }
+.pagination a:hover { background: #0EA5C9; color: white; border-color: #0EA5C9; }
+.pagination .active-page { background: #0EA5C9; color: white; border-color: #0EA5C9; }
+
+/* 14. MOBILE */
+@media (max-width: 768px) {
+    .sidebar { left: -255px; }
+    .sidebar.active { left: 0; }
+    .main-container { margin-left: 0 !important; width: 100% !important; padding: 88px 15px 20px !important; }
+    .filter-box { flex-direction: column; }
+}
